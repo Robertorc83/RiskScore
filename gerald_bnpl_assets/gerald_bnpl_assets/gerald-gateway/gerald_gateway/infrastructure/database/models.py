@@ -2,8 +2,8 @@
 
 import uuid
 from datetime import datetime, date
-from sqlalchemy import Column, String, BigInteger, Boolean, Float, DateTime, Date, Integer, ForeignKey, Text
-from sqlalchemy.dialects.postgresql import UUID, JSONB
+from sqlalchemy import Column, String, BigInteger, Boolean, Float, DateTime, Date, Integer, ForeignKey, Text, JSON
+from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import declarative_base, relationship
 from sqlalchemy.sql import func
 
@@ -23,7 +23,7 @@ class BNPLDecision(Base):
     amount_granted_cents = Column(BigInteger, nullable=False)
     score_numeric = Column(Float, nullable=True)
     score_band = Column(Text, nullable=True)
-    risk_factors = Column(JSONB, nullable=True)
+    risk_factors = Column(JSON, nullable=True)
     created_at = Column(DateTime(timezone=True), nullable=False, server_default=func.now())
 
     plans = relationship("BNPLPlan", back_populates="decision", cascade="all, delete-orphan")
@@ -66,7 +66,7 @@ class OutboundWebhook(Base):
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     event_type = Column(Text, nullable=False)
-    payload = Column(JSONB, nullable=False)
+    payload = Column(JSON, nullable=False)
     target_url = Column(Text, nullable=False)
     status = Column(Text, nullable=False, default="pending")
     last_attempt_at = Column(DateTime(timezone=True), nullable=True)
