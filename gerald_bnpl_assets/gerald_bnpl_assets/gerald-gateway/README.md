@@ -2,6 +2,23 @@
 
 Production-grade microservice for Buy Now, Pay Later (BNPL) credit decisions and repayment plan management.
 
+---
+
+## 🎬 Video Walkthrough
+
+[![Watch the demonstration](https://cdn.loom.com/sessions/thumbnails/6991c2cce2a94d2ea753a1dbbb0e2abf-with-play.gif)](https://www.loom.com/share/6991c2cce2a94d2ea753a1dbbb0e2abf)
+
+**[▶️ Click to watch the full architecture and demo walkthrough](https://www.loom.com/share/6991c2cce2a94d2ea753a1dbbb0e2abf)**
+
+This video demonstrates:
+- Service architecture and design decisions
+- All 5 user personas (user_good, user_overdraft, user_thin, user_gig, user_highutil)
+- Risk scoring algorithm in action
+- Metrics, logging, and observability features
+- Webhook retry logic and error handling
+
+---
+
 ## 🏗️ Architecture
 
 **Clean Architecture** with three layers:
@@ -322,7 +339,9 @@ gerald-gateway/
 
 ## 🎬 Loom Video
 
-**TODO**: Record 10-15 min walkthrough demonstrating:
+**See the video walkthrough at the top of this README** or [click here to watch](https://www.loom.com/share/6991c2cce2a94d2ea753a1dbbb0e2abf).
+
+The video covers:
 1. Architecture overview
 2. Code structure explanation
 3. Running all 5 test personas
