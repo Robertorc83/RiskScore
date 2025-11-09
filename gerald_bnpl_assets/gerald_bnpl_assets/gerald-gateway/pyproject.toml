@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "gerald-gateway"
+version = "0.1.0"
+description = "BNPL Approval & Credit-Limit Service"
+authors = ["Gerald Engineering <engineering@gerald.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.104.0"
+uvicorn = {extras = ["standard"], version = "^0.24.0"}
+pydantic = "^2.5.0"
+pydantic-settings = "^2.1.0"
+sqlalchemy = "^2.0.23"
+psycopg2-binary = "^2.9.9"
+httpx = "^0.25.1"
+prometheus-client = "^0.19.0"
+python-json-logger = "^2.0.7"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+pytest-asyncio = "^0.21.1"
+pytest-cov = "^4.1.0"
+httpx = "^0.25.1"
+faker = "^20.1.0"
+black = "^23.11.0"
+ruff = "^0.1.6"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
+addopts = "--cov=gerald_gateway --cov-report=term-missing --cov-report=html"
+
+[tool.black]
+line-length = 100
+target-version = ['py310']
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
